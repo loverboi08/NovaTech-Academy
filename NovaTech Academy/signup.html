@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech | Sign Up</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="signup-page">
+
+<main class="signup-container">
+
+    <section class="signup-card">
+
+        <div class="signup-left">
+
+            <a href="index.html" class="back-link">← Back Home</a>
+
+            <p class="eyebrow">Join NovaTech</p>
+
+            <h1>Create Your Student Account</h1>
+
+            <p class="subtitle">
+                Start learning Cybersecurity, Ethical Hacking and Advanced Security with practical, real-world training.
+            </p>
+
+            <form>
+
+                <div class="input-group">
+                            <label for="full-name">Full Name</label>
+                            <input id="full-name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel" placeholder="+234..." autocomplete="tel" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="course">Select Course</label>
+
+                    <select id="course" required>
+                        <option value="">Choose a course</option>
+                        <option>Cybersecurity Fundamentals</option>
+                        <option>Ethical Hacking</option>
+                        <option>Advanced Security Techniques</option>
+                    </select>
+                </div>
+
+               <div class="input-group">
+    <label for="password">Password</label>
+
+    <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Create a password"
+        required>
+
+    <small id="password-strength" class="strength-text">
+        Min 8 characters
+    </small>
+</div>
+
+                <button type="submit" class="signup-btn">
+                    Create Account →
+                </button>
+
+    <p class="login-text">
+    Already have an account?
+    <a href="login.html">Login</a>
+    </p>
+
+            <form action="index.html" method="get"> 
+
+            </form>
+
+        </div>
+
+        <div class="signup-right">
+
+            <img src="img/novatech signup.png"
+                 alt="NovaTech Banner">
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+const password = document.getElementById("password");
+const strength = document.getElementById("password-strength");
+
+password.addEventListener("input", function () {
+    const length = password.value.length;
+
+    strength.classList.remove("weak", "medium", "strong");
+
+    if (length === 0) {
+        strength.textContent = "Min 8 characters";
+    } else if (length <= 4) {
+        strength.textContent = "Weak";
+        strength.classList.add("weak");
+    } else if (length <= 7) {
+        strength.textContent = "Medium";
+        strength.classList.add("medium");
+    } else {
+        strength.textContent = "Strong";
+        strength.classList.add("strong");
+    }
+});
+</script>
+
+</body>
+</html>

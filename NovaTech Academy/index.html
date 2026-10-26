@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NovaTech Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#102523',
+                        muted: '#61736f',
+                        paper: '#f4f8f5',
+                        accent: '#62d49f',
+                        'accent-soft': '#d9f5e7',
+                        line: '#d8e6df'
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'Segoe UI', 'sans-serif'],
+                        body: ['DM Sans', 'Segoe UI', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="m-0 bg-paper font-body leading-relaxed text-ink antialiased selection:bg-accent selection:text-ink">
+
+    <header class="relative z-10 border-b border-line bg-white">
+        <nav class="mx-auto flex min-h-[78px] max-w-[1240px] items-center justify-between px-8 max-[800px]:min-h-[70px] max-[800px]:px-[22px]" aria-label="Primary navigation">
+
+            <a class="inline-flex items-center gap-[11px] no-underline" href="#home" aria-label="NovaTech home">
+                <span class="grid h-9 w-9 place-items-center bg-ink font-display font-bold text-accent">N</span>
+
+                <span class="grid font-display text-[17px] font-bold leading-none max-[480px]:text-[15px]">
+                    Nova<span class="text-[#229463]">Tech</span>
+
+                    <small class="mt-[5px] font-body text-[8px] font-normal uppercase tracking-[0.14em] text-muted">
+                        Cybersecurity Academy
+                    </small>
+                </span>
+            </a>
+
+            <button class="block cursor-pointer border-0 bg-transparent min-[801px]:hidden"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-menu">
+
+                <span class="my-1 block h-0.5 w-[23px] bg-ink"></span>
+                <span class="my-1 block h-0.5 w-[23px] bg-ink"></span>
+                <span class="my-1 block h-0.5 w-[23px] bg-ink"></span>
+
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+
+            <div class="flex items-center gap-7 max-[800px]:absolute max-[800px]:left-4 max-[800px]:right-4 max-[800px]:top-[70px] max-[800px]:hidden max-[800px]:flex-col max-[800px]:gap-0 max-[800px]:border max-[800px]:border-line max-[800px]:bg-white max-[800px]:p-2"
+                id="primary-menu">
+
+                <a class="relative text-[13px] text-ink no-underline after:absolute after:bottom-[-30px] after:left-0 after:right-0 after:h-0.5 after:bg-accent max-[800px]:w-full max-[800px]:px-3 max-[800px]:py-2 max-[800px]:after:hidden"
+                    href="#home">
+                    Home
+                </a>
+
+                <a class="text-[13px] text-muted no-underline transition-colors hover:text-ink max-[800px]:w-full max-[800px]:px-3 max-[800px]:py-2"
+                    href="#about">
+                    About
+                </a>
+
+                <a class="text-[13px] text-muted no-underline transition-colors hover:text-ink max-[800px]:w-full max-[800px]:px-3 max-[800px]:py-2"
+                    href="#courses">
+                    Courses
+                </a>
+
+                <a class="text-[13px] text-muted no-underline transition-colors hover:text-ink max-[800px]:w-full max-[800px]:px-3 max-[800px]:py-2"
+                    href="#contact">
+                    Contact
+                </a>
+
+                <a class="inline-flex items-center justify-center gap-3 bg-ink px-4 py-[11px] text-xs font-bold text-white no-underline transition-colors hover:bg-[#247a5c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent max-[800px]:w-full"
+                    href="#courses">
+                    Explore Courses <span>↗</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home" class="mx-auto grid min-h-[610px] max-w-[1240px] grid-cols-2 gap-[60px] overflow-hidden bg-[radial-gradient(circle_at_80%_35%,rgba(98,212,159,.18),transparent_30%)] px-8 py-[110px] pb-[90px] max-[800px]:grid-cols-1 max-[800px]:px-[22px] max-[800px]:py-20 max-[800px]:pb-[70px]">
+
+            <div class="max-w-[590px] self-center">
+
+                <p class="mb-[18px] text-[11px] font-bold uppercase tracking-[0.16em] text-[#229463]">
+                    Learn. Practice. Protect.
+                </p>
+
+                <h1 class="mb-[27px] font-display text-[clamp(48px,6vw,82px)] font-semibold leading-[1.05] tracking-[-0.045em]">
+                    Build the skills<br>
+                    to <em class="not-italic text-[#29a66c]">secure</em> tomorrow.
+                </h1>
+
+                <p class="mb-8 max-w-[490px] text-[17px] text-muted max-[480px]:text-[15px]">
+                    Practical cybersecurity training for curious minds, career changers, and future security professionals.
+                </p>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <a class="inline-flex min-h-12 items-center justify-center gap-3 bg-ink px-5 text-xs font-bold text-white no-underline transition-transform hover:-translate-y-0.5 hover:bg-[#247a5c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                        href="#courses">
+                        Explore Courses <span>↗</span>
+                    </a>
+
+                    <a class="inline-flex min-h-12 items-center justify-center border border-line px-5 text-xs font-bold no-underline transition-colors hover:border-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+                        href="#about">
+                        Why NovaTech
+                    </a>
+
+                </div>
+
+                <div class="mt-[62px] flex gap-7 text-[11px] text-muted max-[480px]:mt-[45px] max-[480px]:gap-4">
+
+                    <span>
+                        <strong class="block font-display text-[19px] text-ink">3</strong>
+                        learning paths
+                    </span>
+
+                    <span>
+                        <strong class="block font-display text-[19px] text-ink">100%</strong>
+                        practical
+                    </span>
+
+                    <span>
+                        <strong class="block font-display text-[19px] text-ink">24/7</strong>
+                        community
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <img src="img/novatech.png"
+                    alt="NovaTech Cybersecurity Academy"
+                    class="w-full max-w-[520px] rounded-3xl object-cover shadow-[0_24px_60px_rgba(16,37,35,.22)] ring-1 ring-ink/10 max-[800px]:mt-[30px] max-[800px]:max-w-full">
+            </div>
+
+        </section>
+
+        <section id="courses" class="mx-auto max-w-[1240px] bg-white px-8 py-[110px] max-[800px]:px-[22px]">
+
+            <div class="mb-11 grid grid-cols-[1.2fr_.8fr] items-end gap-[50px] max-[800px]:grid-cols-1">
+
+                <div>
+                    <p class="mb-[18px] text-[11px] font-bold uppercase tracking-[0.16em] text-[#229463]">
+                        Choose your path
+                    </p>
+
+                    <h2 class="font-display text-[clamp(36px,4vw,58px)] font-semibold leading-[1.05] tracking-[-0.045em]">
+                        Training that moves<br>
+                        with the <em class="not-italic text-[#29a66c]">real world.</em>
+                    </h2>
+                </div>
+
+                <p class="text-muted">
+                    From first principles to advanced defense, learn by doing with focused courses built around modern security work.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-3 gap-[18px] max-[800px]:grid-cols-1">
+
+                <article class="relative min-h-[335px] border border-line bg-paper p-[30px] transition-all hover:-translate-y-[5px] hover:border-[#9bcbb4] hover:shadow-[0_18px_35px_rgba(16,37,35,.1)]">
+
+                    <span class="absolute right-7 top-[25px] font-display text-sm text-muted">01</span>
+
+                    <div class="mb-[38px] grid h-12 w-12 place-items-center bg-accent-soft text-[25px] text-[#27865e]">⌘</div>
+
+                    <h3 class="mb-[13px] font-display text-xl font-semibold leading-[1.05]">
+                        Cybersecurity Fundamentals
+                    </h3>
+
+                    <p class="text-muted">
+                        Build a strong foundation in networks, threats, privacy, and the principles behind secure systems.
+                    </p>
+
+                    <a class="absolute bottom-7 font-bold text-[#27865e] no-underline hover:text-ink"
+                        href="#contact">
+                        View Course <span>↗</span>
+                    </a>
+
+                </article>
+
+                <article class="relative min-h-[335px] border border-ink bg-ink p-[30px] text-white transition-all hover:-translate-y-[5px] hover:shadow-[0_18px_35px_rgba(16,37,35,.2)]">
+
+                    <span class="absolute right-7 top-[25px] font-display text-sm text-[#a9c2b8]">02</span>
+
+                    <div class="mb-[38px] grid h-12 w-12 place-items-center bg-accent-soft text-[25px] text-[#27865e]">◈</div>
+
+                    <h3 class="mb-[13px] font-display text-xl font-semibold leading-[1.05]">
+                        Ethical Hacking
+                    </h3>
+
+                    <p class="text-[#b6ccc3]">
+                        Learn how security professionals find vulnerabilities, think like attackers, and test systems responsibly.
+                    </p>
+
+                    <a class="absolute bottom-7 font-bold text-accent no-underline hover:text-white"
+                        href="#contact">
+                        View Course <span>↗</span>
+                    </a>
+
+                </article>
+
+                <article class="relative min-h-[335px] border border-line bg-paper p-[30px] transition-all hover:-translate-y-[5px] hover:shadow-[0_18px_35px_rgba(16,37,35,.1)]">
+
+                    <span class="absolute right-7 top-[25px]">03</span>
+
+                    <div class="mb-[38px] grid h-12 w-12 place-items-center bg-accent-soft text-[25px] text-[#27865e]">⌁</div>
+
+                    <h3 class="mb-[13px] font-display text-xl font-semibold leading-[1.05]">
+                        Advanced Security Techniques
+                    </h3>
+
+                    <p class="text-muted">
+                        Strengthen your expertise with threat analysis, defense strategy, and practical incident response.
+                    </p>
+
+                    <a class="absolute bottom-7 font-bold text-[#27865e] no-underline"
+                        href="#contact">
+                        View Course <span>↗</span>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="about" class="bg-accent-soft">
+
+            <div class="mx-auto grid max-w-[1240px] grid-cols-2 gap-20 px-8 py-[110px] max-[800px]:grid-cols-1 max-[800px]:px-[22px]">
+
+                <div>
+
+                    <p class="mb-[18px] text-[11px] font-bold uppercase tracking-[0.16em] text-[#229463]">
+                        The NovaTech Approach
+                    </p>
+
+                    <h2 class="font-display text-[clamp(36px,4vw,58px)] font-semibold leading-[1.05] tracking-[-0.045em]">
+                        Knowledge is useful.<br>
+                        <em class="not-italic text-[#29a66c]">Capability</em> is better.
+                    </h2>
+
+                </div>
+
+                <div class="max-w-[430px] text-muted">
+
+                    <p>
+                        NovaTech Cybersecurity Academy develops the next generation of security professionals through practical, industry-relevant education.
+                    </p>
+
+                    <p>
+                        Every lesson combines clear theory, guided labs, and real-world scenarios so you can build confidence by solving meaningful problems.
+                    </p>
+
+                    <a class="font-bold text-[#27865e] no-underline" href="#contact">
+                        Start Learning <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="bg-ink text-white">
+
+            <div class="mx-auto grid max-w-[1240px] grid-cols-2 gap-[100px] px-8 py-[110px] max-[800px]:grid-cols-1 max-[800px]:gap-12 max-[800px]:px-[22px]">
+
+                <div>
+
+                    <p class="mb-[18px] text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+                        Let's Connect
+                    </p>
+
+                    <h2 class="font-display text-[clamp(40px,5vw,66px)] font-semibold leading-[1.05]">
+                        Ready to make<br>
+                        your next move?
+                    </h2>
+
+                    <p class="max-w-[350px] text-[#a9c2b8]">
+                        Have questions about a course or your learning path? Our team is here to help.
+                    </p>
+
+                    <div class="mt-[35px] grid gap-[7px]">
+
+                        <a class="text-accent" href="mailto:info@novatechacademy.com">
+                            info@novatechacademy.com
+                        </a>
+
+                        <span>+234 816 371 5163</span>
+                        <span>Nigeria</span>
+
+                    </div>
+
+                </div>
+
+                <form class="grid content-center gap-5">
+
+                    <label class="grid gap-[7px] text-[11px] uppercase text-[#a9c2b8]" for="name">
+                        Your Name
+
+                        <input class="w-full border border-white/20 bg-transparent px-[14px] py-[13px] text-white outline-none focus:border-accent"
+                            id="name"
+                            type="text"
+                            placeholder="Full Name"
+                            required>
+                    </label>
+
+                    <label class="grid gap-[7px] text-[11px] uppercase text-[#a9c2b8]" for="email">
+                        Email Address
+
+                        <input class="w-full border border-white/20 bg-transparent px-[14px] py-[13px] text-white outline-none focus:border-accent"
+                            id="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            required>
+                    </label>
+
+                    <label class="grid gap-[7px] text-[11px] uppercase text-[#a9c2b8]" for="message">
+                        Message
+
+                        <textarea class="w-full border border-white/20 bg-transparent px-[14px] py-[13px] text-white outline-none focus:border-accent"
+                            id="message"
+                            rows="4"
+                            placeholder="How can we help?"></textarea>
+                    </label>
+
+                    <button class="inline-flex min-h-12 items-center justify-center justify-self-start bg-accent px-5 text-xs font-bold text-ink hover:bg-[#247a5c] max-[480px]:w-full"
+                        type="submit">
+                        Send Message <span>↗</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+         <section class="bg-paper px-8 py-[90px] max-[800px]:px-[22px]">
+
+            <div class="mx-auto max-w-[900px] rounded-[28px] bg-gradient-to-br from-ink to-[#1d4d44] px-10 py-[70px] text-center text-white shadow-[0_25px_50px_rgba(16,37,35,.25)]">
+
+                <p class="mb-[18px] text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+                    Ready to begin?
+                </p>
+
+                <h2 class="font-display text-[clamp(36px,5vw,60px)] font-semibold leading-[1.05]">
+                    Take the next step<br>
+                    and join <em class="not-italic text-[#29a66c]">NovaTech.</em>
+                </h2>
+
+                <p class="mx-auto mb-[35px] max-w-[600px] text-[#c7ddd5]">
+                    Create your student account and start your cybersecurity journey today.
+                </p>
+
+                <a href="signup.html"
+                    class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-[34px] py-[15px] text-xs font-bold text-ink no-underline transition-all hover:-translate-y-1">
+                    Next → Sign Up
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-[1240px] justify-between px-8 py-[25px] text-[11px] text-muted max-[800px]:px-[22px] max-[480px]:grid max-[480px]:gap-[6px]">
+
+        <span>© 2026 NovaTech Academy</span>
+        <span>Practical skills for a safer digital world.</span>
+
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('button[aria-controls="primary-menu"]');
+        const navMenu = document.querySelector('#primary-menu');
+
+        navToggle.addEventListener('click', () => {
+            const isHidden = navMenu.classList.toggle('max-[800px]:hidden');
+            navToggle.setAttribute('aria-expanded', String(!isHidden));
+        });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('max-[800px]:hidden');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+    <!-- AI Chatbot -->
+<div id="chatbot" class="fixed bottom-5 right-5 z-50">
+
+    <!-- Chat Window -->
+    <div id="chat-window"
+        class="hidden w-80 max-w-[90vw] rounded-2xl bg-white shadow-2xl border border-line overflow-hidden">
+
+        <div class="bg-ink text-white p-4 flex justify-between items-center">
+            <div>
+                <h3 class="font-display font-semibold">NovaBot</h3>
+                <p class="text-xs text-gray-300">NovaTech Assistant</p>
+            </div>
+
+            <button id="close-chat" class="text-xl">&times;</button>
+        </div>
+
+        <div id="chat-messages" class="h-80 overflow-y-auto p-4 space-y-3 bg-paper">
+            <div class="bg-accent-soft p-3 rounded-xl text-sm">
+                Hi. I'm NovaBot. Ask me about courses, pricing, contact, or how to join NovaTech.
+            </div>
+        </div>
+
+        <div class="flex border-t border-line">
+            <input
+                id="chat-input"
+                type="text"
+                placeholder="Ask a question..."
+                class="flex-1 px-4 py-3 outline-none bg-white">
+
+            <button
+                id="send-chat"
+                class="bg-accent px-4 font-bold text-ink hover:bg-[#49c989]">
+                Send
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Floating Button -->
+    <button
+        id="open-chat"
+        class="mt-3 ml-auto block h-14 w-14 rounded-full bg-ink text-white text-2xl shadow-xl hover:bg-[#247a5c]">
+        💬
+    </button>
+
+</div>
+
+</body>
+</html>

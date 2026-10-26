@@ -1,0 +1,834 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+    --ink: #102523;
+    --muted: #61736f;
+    --paper: #f4f8f5;
+    --white: #ffffff;
+    --accent: #62d49f;
+    --accent-soft: #d9f5e7;
+    --line: #d8e6df;
+
+    --display: "Space Grotesk", "Segoe UI", sans-serif;
+    --body: "DM Sans", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);  
+    font-family: var(--body);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--display);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+h1 em,
+h2 em {
+    color: #29a66c;
+    font-style: normal;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 10;
+}
+
+.site-nav {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 32px;
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.brand-symbol {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--ink);
+    color: var(--accent);
+
+    font-family: var(--display);
+    font-weight: 700;
+}
+
+.brand-copy {
+    display: grid;
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.brand-copy span {
+    color: #229463;
+}
+
+.brand-copy small {
+    margin-top: 5px;
+    font-family: var(--body);
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--ink);
+}
+
+.nav-link.active {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.nav-cta,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-cta {
+    padding: 11px 16px;
+    background: var(--ink);
+    color: white;
+}
+
+.nav-cta:hover {
+    background: #247a5c;
+}
+
+.nav-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-toggle > span:not(.visually-hidden) {
+    display: block;
+    width: 23px;
+    height: 2px;
+    margin: 4px 0;
+    background: var(--ink);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1240px;
+    margin: auto;
+    padding: 110px 32px 90px;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 60px;
+
+    min-height: 610px;
+}
+
+.hero-content {
+    align-self: center;
+    max-width: 590px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: #229463;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 27px;
+    font-size: clamp(48px,6vw,82px);
+}
+
+.hero-content > p:not(.eyebrow) {
+    margin-bottom: 32px;
+    max-width: 490px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button {
+    min-height: 48px;
+    padding: 0 20px;
+}
+
+.button-primary {
+    background: var(--ink);
+    color: white;
+}
+
+.button-primary:hover {
+    background: #247a5c;
+}
+
+.button-ghost {
+    border: 1px solid var(--line);
+    background: transparent;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 28px;
+    margin-top: 62px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.hero-stats strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 19px;
+}
+
+/* HERO IMAGE */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    max-width: 1240px;
+    margin: auto;
+    padding: 110px 32px;
+}
+
+.courses-section {
+    background: white;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 50px;
+    align-items: end;
+    margin-bottom: 44px;
+}
+
+.section-heading h2,
+.about-section h2 {
+    font-size: clamp(36px,4vw,58px);
+}
+
+.section-heading > p {
+    color: var(--muted);
+}
+
+/* =========================
+   COURSE CARDS
+========================= */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.course-card {
+    position: relative;
+    padding: 30px;
+    min-height: 335px;
+
+    background: var(--paper);
+    border: 1px solid var(--line);
+
+    transition: .25s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(16,37,35,.1);
+}
+
+.course-card.featured {
+    background: var(--ink);
+    color: white;
+}
+
+.course-number {
+    position: absolute;
+    top: 25px;
+    right: 28px;
+}
+
+.course-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 38px;
+
+    background: var(--accent-soft);
+    color: #27865e;
+    font-size: 25px;
+}
+
+.course-card h3 {
+    margin-bottom: 13px;
+}
+
+.course-card p {
+    color: var(--muted);
+}
+
+.course-card a {
+    position: absolute;
+    bottom: 28px;
+    color: #27865e;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    background: var(--accent-soft);
+}
+
+.about-grid {
+    max-width: 1240px;
+    margin: auto;
+    padding: 110px 32px;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 80px;
+}
+
+.about-copy {
+    max-width: 430px;
+    color: var(--muted);
+}
+/* =========================
+   SIGNUP CTA
+========================= */
+
+.signup-cta {
+    background: var(--paper);
+    padding: 90px 32px;
+}
+
+.signup-cta-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    background: linear-gradient(135deg, #102523, #1d4d44);
+    color: white;
+    padding: 70px 40px;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px rgba(16, 37, 35, .25);
+}
+
+.signup-cta .eyebrow {
+    color: var(--accent);
+}
+
+.signup-cta h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    margin-bottom: 20px;
+}
+
+.signup-cta p:not(.eyebrow) {
+    color: #c7ddd5;
+    max-width: 600px;
+    margin: auto auto 35px;
+}
+
+.next-button {
+    padding: 15px 34px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--ink);
+    transition: .3s;
+}
+
+.next-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(98,212,159,.35);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: var(--ink);
+    color: white;
+}
+
+.contact-grid {
+    max-width: 1240px;
+    margin: auto;
+    padding: 110px 32px;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 100px;
+}
+
+.contact-section .eyebrow {
+    color: var(--accent);
+}
+
+.contact-section h2 {
+    font-size: clamp(40px,5vw,66px);
+}
+
+.contact-intro {
+    max-width: 350px;
+    color: #a9c2b8;
+}
+
+.contact-details {
+    display: grid;
+    gap: 7px;
+    margin-top: 35px;
+}
+
+.contact-details a {
+    color: var(--accent);
+}
+
+.contact-form {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+}
+
+.contact-form label {
+    display: grid;
+    gap: 7px;
+    font-size: 11px;
+    color: #a9c2b8;
+    text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+
+    border: 1px solid rgba(255,255,255,.2);
+    background: transparent;
+    color: white;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.contact-form .button {
+    justify-self: start;
+}
+
+.contact-section .button-primary {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width: 1240px;
+    margin: auto;
+    padding: 25px 32px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .site-nav {
+        padding: 0 22px;
+        min-height: 70px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 16px;
+        right: 16px;
+
+        flex-direction: column;
+        gap: 0;
+
+        padding: 10px;
+        background: white;
+        border: 1px solid var(--line);
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+
+    .hero,
+    .section-heading,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 80px 22px 70px;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    footer {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .brand-copy {
+        font-size: 15px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 15px;
+    }
+
+    .hero-stats {
+        gap: 16px;
+        margin-top: 45px;
+    }
+
+    .contact-form .button {
+        width: 100%;
+    }
+
+    footer {
+        display: grid;
+        gap: 6px;
+    }
+}
+
+/* =========================
+   SIGNUP PAGE
+========================= */
+
+.signup-page {
+    min-height: 100vh;
+    background: var(--paper);
+}
+
+.signup-container {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    padding: 40px 24px;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(98, 212, 159, .14), transparent 30%),
+        var(--paper);
+}
+
+.signup-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .85fr);
+    width: min(1080px, 100%);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 24px 70px rgba(16, 37, 35, .12);
+}
+
+.signup-left {
+    padding: clamp(34px, 6vw, 76px);
+}
+
+.back-link {
+    display: inline-flex;
+    margin-bottom: 64px;
+    color: var(--muted);
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.back-link:hover { color: #229463; }
+
+.signup-left .eyebrow { margin-bottom: 14px; }
+
+.signup-left h1 {
+    max-width: 470px;
+    margin-bottom: 18px;
+    font-size: clamp(38px, 4vw, 58px);
+}
+
+.subtitle {
+    max-width: 490px;
+    margin-bottom: 34px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.signup-left form {
+    display: grid;
+    gap: 17px;
+}
+
+.input-group {
+    display: grid;
+    gap: 7px;
+}
+
+.input-group label {
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    min-height: 47px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    outline: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 13px;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.input-group input::placeholder { color: #91a19c; }
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #229463;
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(98, 212, 159, .16);
+}
+
+/* Password Strength */
+
+.strength-text {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.strength-text.weak {
+    color: #dc3545;
+}
+
+.strength-text.medium {
+    color: #f59e0b;
+}
+
+.strength-text.strong {
+    color: #16a34a;
+}
+
+.signup-btn {
+    min-height: 51px;
+    margin-top: 8px;
+    border: 0;
+    background: var(--ink);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.signup-btn:hover { background: #247a5c; transform: translateY(-2px); }
+
+.signup-right img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: auto;
+}
+
+
+
+@media (max-width: 900px){
+
+    .signup-card{
+        grid-template-columns: 1fr;
+    }
+
+    .signup-right img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: auto;
+}
+    }
+
+    .signup-left{
+        padding: 35px;
+    }
+}
+}
